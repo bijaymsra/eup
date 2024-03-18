@@ -16,13 +16,20 @@ body {
 html{
   scroll-behavior: smooth;
 }
+
+
 header {
   display: flex;
+  position: fixed; /* Changed from sticky to fixed */
+  top: 0;
+  z-index: 1000; /* Ensure the header stays on top of other content */
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* Ensure the header spans the entire width */
   padding: 20px;
   background: transparent; /* Adjust gradient colors */
 }
+
 
 .logo {
   display: flex;
@@ -40,7 +47,7 @@ header {
   color: #4b0082; /* Purple color */
 }
 
-nav ul {
+ nav ul {
   list-style: none;
   display: flex;
 }
@@ -50,9 +57,11 @@ nav ul li {
 }
 
 nav ul li a {
+  
   text-decoration: none;
-  color: #4b0082; /* Purple color */
+    color: #4b0082;  /* Purple color  */ 
 }
+  
 
 .contact-button {
   background-color: #4b0082;
@@ -89,6 +98,21 @@ background: radial-gradient(circle farthest-corner at center center, #A423B8 0%,
 -webkit-text-fill-color: transparent;
  /* Set your preferred text color */
   font-family: poppins;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif; /* Set your preferred font */
+}
+
+.heading::before {
+  content: "Euphoria: ";
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.heading::after {
+  content: " A Path to Happiness";
+  font-size: 0.7em; /* Adjust the font size as needed */
 }
 
 .subheading {
@@ -585,9 +609,16 @@ width: 100%;
 
 /* extra style added */
 
-.un:hover{
+.nav-link {
+  text-decoration: none;
+  color: #4b0082;
+}
+
+.nav-link.active {
   border-bottom: 2px solid blueviolet;
 }
+
+
 .card1>img
 {
   height:100px;
@@ -616,4 +647,41 @@ width: 100%;
    border-radius: 50%;
   transition: 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* this is for events styling  */
+
+.event-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-info {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* this is for contact us  */
+
+.contact{
+  text-align: center;
+  color: black;
+  padding: 100px 100px;
+  margin: 10px;
+}
+
+/* about making shadow */
+
+.pOuter {
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pInner {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
