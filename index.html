@@ -24,6 +24,23 @@
         </style>
     </head>
     <body>
+ 
+        <!-- this is for announcement to display when website gets overloaded -->
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <h2>!!!Important Announcement!!!</h2>
+                <p>This is an important announcement regarding our website. Please read carefully.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies purus non odio suscipit, ut elementum ex pulvinar. Donec suscipit quam ac magna bibendum commodo.</p>
+                <label>
+                    <input type="checkbox" id="confirmationCheckbox"> I have read and understood the announcement.
+                </label>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+
+
+
         <div class="message">
             <img src="/assets/img/logo.png" alt="crashed..." style="position: relative; height: auto; width:130px; transform: scale(2.4);">
             <h1>Website Under Development</h1>
@@ -297,10 +314,10 @@
  
 <div class="contact">
     <h2> Contact Us</h2>
-    <a href="#"><img src="./assets/contact/twitter.jpeg" width="40" height="40" alt="Linkdin"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="./assets/contact/linkedin.jpeg" width="40" height="40" alt="Tweeter"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="./assets/contact/fb.jpeg" width="40" height="40" alt="Facebook"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="./assets/contact/insta.jpeg" width="40" height="40" alt="Instagram"/></a>
+    <a href="#"><img src="/assets/contact/twitter.jpeg" width="40" height="40" alt="Linkdin"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="/assets/contact/linkedin.jpeg" width="40" height="40" alt="Tweeter"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="/assets/contact/fb.jpeg" width="40" height="40" alt="Facebook"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="/assets/contact/insta.jpeg" width="40" height="40" alt="Instagram"/></a>
 </div>
 
 
@@ -344,6 +361,32 @@
         });
     });
 </script>
+
+
+<!-- this is script for announcement -->
+<script>
+    const overlay = document.getElementById('overlay');
+    const checkbox = document.getElementById('confirmationCheckbox');
+    
+    // Function to close the popup
+    function closePopup() {
+        // Hide the overlay
+        overlay.style.display = 'none';
+    
+        // If checkbox is checked, store confirmation in local storage
+        if (checkbox.checked) {
+            localStorage.setItem('announcementConfirmation', 'true');
+        }
+    }
+    
+    // Check if the user has already confirmed the announcement
+    window.onload = function() {
+        const confirmation = localStorage.getItem('announcementConfirmation');
+        if (!confirmation) {
+            overlay.style.display = 'flex'; // Show the overlay if not confirmed
+        }
+    };
+        </script>
 
 
     </body>

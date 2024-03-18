@@ -685,3 +685,29 @@ width: 100%;
 .pInner {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+
+
+/* this is for announcement style */
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  text-align: center;
+}
