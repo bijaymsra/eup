@@ -28,7 +28,7 @@
         <!-- this is for announcement to display when website gets overloaded -->
         <div class="overlay" id="overlay">
             <div class="popup">
-                <h2>!!!Important Announcement!!!</h2>
+                <h2>!!! Important Announcement !!!</h2>
                 <p>This is an important announcement regarding our website. Please read carefully.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies purus non odio suscipit, ut elementum ex pulvinar. Donec suscipit quam ac magna bibendum commodo.</p>
                 <label>
@@ -313,11 +313,11 @@
 
  
 <div class="contact">
-    <h2> Contact Us</h2>
-    <a href="#"><img src="/assets/contact/twitter.jpeg" width="40" height="40" alt="Linkdin"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="/assets/contact/linkedin.jpeg" width="40" height="40" alt="Tweeter"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="/assets/contact/fb.jpeg" width="40" height="40" alt="Facebook"/></a>  &nbsp; &nbsp;
-    <a href="#"><img src="/assets/contact/insta.jpeg" width="40" height="40" alt="Instagram"/></a>
+    <h2> Our Social Media Handles </h2>
+    <a href="#"><img src="./assets/contact/twitter.jpeg" width="30" height="30" alt="Linkdin"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="./assets/contact/linkedin.jpeg" width="30" height="30" alt="Tweeter"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="./assets/contact/fb.jpeg" width="30" height="30" alt="Facebook"/></a>  &nbsp; &nbsp;
+    <a href="#"><img src="./assets/contact/insta.jpeg" width="30" height="30" alt="Instagram"/></a>
 </div>
 
 
@@ -364,29 +364,31 @@
 
 
 <!-- this is script for announcement -->
-<script>
-    const overlay = document.getElementById('overlay');
-    const checkbox = document.getElementById('confirmationCheckbox');
-    
-    // Function to close the popup
-    function closePopup() {
-        // Hide the overlay
-        overlay.style.display = 'none';
-    
-        // If checkbox is checked, store confirmation in local storage
-        if (checkbox.checked) {
-            localStorage.setItem('announcementConfirmation', 'true');
-        }
-    }
-    
-    // Check if the user has already confirmed the announcement
-    window.onload = function() {
-        const confirmation = localStorage.getItem('announcementConfirmation');
-        if (!confirmation) {
-            overlay.style.display = 'flex'; // Show the overlay if not confirmed
-        }
-    };
+
+        <script>
+            const overlay = document.getElementById('overlay');
+            const checkbox = document.getElementById('confirmationCheckbox');
+            
+            function closePopup() {
+                // Check if the checkbox is checked
+                if (checkbox.checked) {
+                    // Hide the overlay
+                    overlay.style.display = 'none';
+            
+                    localStorage.setItem('announcementConfirmation', 'true');
+                } else {
+                    alert('please mark as read before closing !');
+                }
+            }
+            
+            window.onload = function() {
+                const confirmation = localStorage.getItem('announcementConfirmation');
+                if (!confirmation) {
+                    overlay.style.display = 'flex'; // Show the overlay if not confirmed
+                }
+            };
         </script>
+        
 
 
     </body>
