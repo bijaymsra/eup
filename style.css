@@ -105,13 +105,13 @@ background: radial-gradient(circle farthest-corner at center center, #A423B8 0%,
 }
 
 .heading::before {
-  content: "Euphoria: ";
+  content: "Euphoria";
   font-size: 1.3em;
   font-weight: bold;
 }
 
 .heading::after {
-  content: " A Path to Happiness";
+  content: " : Path to Happiness";
   font-size: 0.7em; /* Adjust the font size as needed */
 }
 
